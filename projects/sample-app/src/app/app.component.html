@@ -1,0 +1,34 @@
+<div>
+  <h1 [ngxLoadingState]="'sample-app.root'">{{ title }}</h1>
+  <div>
+    <span>This is the current loading value: </span>
+    <strong>{{ true | ngxLoadingState:'sample-app.root' }}</strong>
+  </div>
+
+  <!-- Delay -->
+  <div>
+    <button (click)="startDelay()">START DELAY</button>
+    <div>
+      <span>Value:</span>
+      <strong>{{ state['delay'] }}</strong>
+    </div>
+  </div>
+
+  <!-- Interval -->
+  <div>
+    <button (click)="startInterval()">START INTERVAL</button>
+    <div>
+      <span>Value:</span>
+      <strong>{{ state['interval'] }}</strong>
+    </div>
+  </div>
+
+  <!-- Interval -->
+  <div>
+    <button (click)="startNested()">START NESTED</button>
+    <div>
+      <span>Value:</span>
+      <strong>{{ state['nested'] }}</strong>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+@mixin ngx-loading-state-dots(
+  $size: 16px,
+  $width: 32px,
+  $color: #FFFFFF,
+  $background-color: #FFF2,
+  $ease-duration: 0.5s
+) {
+
+  @keyframes ngx-loading-state-dots {
+    0% {
+      background-color: $background-color;
+      box-shadow: $width 0 $background-color, -$width 0 $color;
+    }
+    50% {
+      background-color: $color;
+      box-shadow: $width 0 $background-color, -$width 0 $background-color;
+    }
+    100% {
+      background-color: $background-color;
+      box-shadow: $width 0 $color, -$width 0 $background-color;
+    }
+  }
+
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: $color;
+  box-shadow: $width 0 $color, -$width 0 $color;
+  box-sizing: border-box;
+  animation: ngx-loading-state-dots $ease-duration ease-out infinite alternate;
+  animation-play-state: inherit;
+}

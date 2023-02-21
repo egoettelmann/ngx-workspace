@@ -1,0 +1,6 @@
+@use "common";
+@use "spinner";
+
+@include common.ngx-loading-state() {
+  @include spinner.ngx-loading-state-spinner();
+}

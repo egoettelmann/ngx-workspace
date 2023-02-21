@@ -1,0 +1,33 @@
+@mixin ngx-loading-state(
+  $background-color: #000000,
+  $background-opacity: 0.5,
+) {
+
+  .ngx-loading-state--active {
+    position: relative;
+    pointer-events: none;
+
+    &:after {
+      @content;
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      will-change: transform;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $background-color;
+      opacity: $background-opacity;
+    }
+  }
+
+}

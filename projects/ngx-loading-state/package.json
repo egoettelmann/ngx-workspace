@@ -1,0 +1,24 @@
+{
+  "name": "ngx-loading-state",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npm run build:sass",
+    "build:sass": "sass --style=compressed src/scss/default.scss dist/styles/default.css"
+  },
+  "peerDependencies": {
+    "@angular/common": "^15.1.0",
+    "@angular/core": "^15.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "exports": {
+    "./styles/scss": {
+      "sass": "./_index.scss"
+    },
+    "./styles/prebuilt": {
+      "style": "./default.css"
+    }
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@use "dist/ngx-loading-state/styles/scss" as ngx-loading-state;
+
+@include ngx-loading-state.ngx-loading-state() {
+  @include ngx-loading-state.ngx-loading-state-dots();
+}

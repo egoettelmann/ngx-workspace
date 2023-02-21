@@ -1,0 +1,26 @@
+@mixin ngx-loading-state-spinner(
+  $size: 40px,
+  $width: 5px,
+  $color: #FFFFFF,
+  $spin-duration: 1s
+) {
+
+  @keyframes ngx-loading-state-spinner {
+    0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+  }
+
+  width: $size;
+  height: $size;
+  border: $width solid $color;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: ngx-loading-state-spinner $spin-duration linear infinite;
+  animation-play-state: inherit;
+}
