@@ -1,6 +1,11 @@
 {
   "name": "ngx-loading-state",
   "version": "0.0.1",
+  "description": "Angular library that allows to handle loaders globally through a directive, a pipe and a RxJS operator.",
+  "keywords": ["angular", "loading", "spinner", "RxJS"],
+  "license": "MIT",
+  "repository": "https://github.com/egoettelmann/ngx-workspace/tree/master/projects/ngx-loading-state",
+  "homepage": "https://github.com/egoettelmann/ngx-workspace/tree/master/projects/ngx-loading-state",
   "scripts": {
     "build": "npm run build:sass",
     "build:sass": "sass --style=compressed src/scss/default.scss dist/styles/default.css"

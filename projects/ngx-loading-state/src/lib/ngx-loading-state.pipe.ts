@@ -9,9 +9,9 @@ import { NgxLoadingStateService } from './ngx-loading-state.service';
 export class NgxLoadingStatePipe implements PipeTransform, OnDestroy {
 
   /**
-   * The value when loading.
+   * The value when not loading.
    */
-  private valueWhenLoading?: boolean;
+  private valueWhenNotLoading?: boolean;
 
   /**
    * The current loading state
@@ -27,8 +27,8 @@ export class NgxLoadingStatePipe implements PipeTransform, OnDestroy {
   }
 
   transform(value: boolean, channelName: string): boolean {
-    if (this.valueWhenLoading != value) {
-      this.valueWhenLoading = value;
+    if (this.valueWhenNotLoading != value) {
+      this.valueWhenNotLoading = value;
       // Input value has changed: (re)creating subscription
       this.clear();
       this.subscription = this.ngxLoadingStateService.getChanges(channelName).subscribe(value => {
@@ -44,7 +44,7 @@ export class NgxLoadingStatePipe implements PipeTransform, OnDestroy {
     }
 
     // Returning value based on current state
-    return this.currentLoadingState ? this.valueWhenLoading : (!this.valueWhenLoading);
+    return this.currentLoadingState ? !(this.valueWhenNotLoading) : this.valueWhenNotLoading;
   }
 
   ngOnDestroy(): void {

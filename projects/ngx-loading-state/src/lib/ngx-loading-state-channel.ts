@@ -1,13 +1,13 @@
-import { ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 export class NgxLoadingStateChannel {
   name: string;
   state?: number;
-  changes: ReplaySubject<boolean>;
+  changes: Subject<boolean>;
 
   constructor(name: string) {
     this.name = name;
-    this.changes = new ReplaySubject<boolean>(1);
+    this.changes = new BehaviorSubject<boolean>(false);
   }
 
   setLoading() {
